@@ -374,7 +374,7 @@ export class OAuth2AuthCodePKCE {
 
       const accessToken: AccessToken = {
         value: access_token,
-        expiry: (new Date(Date.now() + parseInt(expires_in))).toString()
+        expiry: (new Date(Date.now() + (parseInt(expires_in)*1000))).toString()
       };
       this.state.accessToken = accessToken;
 
